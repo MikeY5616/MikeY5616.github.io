@@ -26,7 +26,7 @@
 
   list.innerHTML = posts
     .map(function (p) {
-      var url = "posts/" + p.slug + ".html";
+      var url = "post.html?p=" + p.slug;
       var tags = (p.tags || [])
         .map(function (t) {
           return '<span class="tag">' + t + "</span>";
