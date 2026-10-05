@@ -11,6 +11,13 @@
 
 const POSTS = [
   {
+    slug: "china-next-decade",
+    title: "中美博弈下，一个投资人关于未来十年的思考",
+    date: "2026-10-05",
+    excerpt: "从国际秩序、文化内核、代际转变三个维度，理解中国未来十年的结构性机遇。",
+    tags: ["投资", "随笔"]
+  },
+  {
     slug: "hello-world",
     title: "开站啦：你好，世界",
     date: "2026-10-05",
