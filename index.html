@@ -1,3 +1,46 @@
-<p>hello 大家好</p>
-<p>我是Mike Tang,这是我的个人网站。</p>
-<p>很高兴您能来到这里，坐会 喝喝茶 看看我写的东东</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>清茶小馆 · Mike Tang 的个人博客</title>
+  <meta name="description" content="我是 Mike Tang，欢迎来到我的个人博客。坐会，喝喝茶，看看我写的东东。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍵</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="index.html">🍵 清茶小馆</a>
+      <nav class="site-nav">
+        <a href="index.html" class="active">首页</a>
+        <a href="https://github.com/MikeY5616" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>清茶小馆</h1>
+      <p class="tagline">坐会，喝喝茶，看看我写的东东。</p>
+      <p class="intro">我是 <strong>Mike Tang</strong>，这里是我的个人博客，记录生活里的一些随笔和感悟。很高兴您能来到这里。</p>
+    </section>
+
+    <section class="post-list-section">
+      <h2 class="section-title">最近的文章</h2>
+      <div id="post-list" class="post-list">
+        <!-- 文章列表由 js/main.js 自动渲染 -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Mike Tang · 托管于 <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a></p>
+    </div>
+  </footer>
+
+  <script src="js/posts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
