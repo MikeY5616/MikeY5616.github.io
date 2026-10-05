@@ -1,4 +1,7 @@
 @echo off
-rem 双击运行：启动本地预览服务器，然后用浏览器打开 http://localhost:8765
-node "%~dp0serve.js"
+rem Double-click to start local preview server, then open http://localhost:8765
+cd /d "%~dp0"
+node serve.js
+echo.
+echo If the server did not start, please check that Node.js is installed.
 pause

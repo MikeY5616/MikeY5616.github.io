@@ -11,6 +11,13 @@
 
 const POSTS = [
   {
+    slug: "markdown-usage",
+    title: "markdown使用方法",
+    date: "2026-10-06",
+    excerpt: "记录 Markdown 的基本用法，边写边学。",
+    tags: ["随笔"]
+  },
+  {
     slug: "china-next-decade",
     title: "中美博弈下，一个投资人关于未来十年的思考",
     date: "2026-10-05",
