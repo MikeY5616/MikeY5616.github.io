@@ -12,9 +12,9 @@
 const POSTS = [
   {
     slug: "markdown-usage",
-    title: "markdown使用方法",
+    title: "markdown使用指南",
     date: "2026-10-06",
-    excerpt: "记录 Markdown 的基本用法，边写边学。",
+    excerpt: "自己按照官方指南精简而成的 Markdown 速查笔记。",
     tags: ["随笔"]
   },
   {
