@@ -299,6 +299,17 @@ a:hover {
   font-size: 0.9rem;
 }
 
+/* ---------- 评论区 ---------- */
+.comments {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+
+.comments iframe {
+  width: 100%;
+}
+
 /* ---------- 页脚 ---------- */
 .site-footer {
   border-top: 1px solid var(--border);

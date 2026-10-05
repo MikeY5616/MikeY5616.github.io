@@ -44,6 +44,10 @@
 
 直接用浏览器打开 `index.html` 即可，不需要安装任何工具。
 
+## 评论系统
+
+每篇文章底部有 Giscus 评论区（基于 GitHub Discussions），访客登录 GitHub 账号即可留言，评论数据保存在本仓库的 Discussions 里。新文章请从 `posts/_template.html` 复制，评论框会自动带上。
+
 ## 修改网站样式
 
 所有颜色、字体、间距都在 `css/style.css` 顶部的 `:root` 变量里，改一处全站生效。
