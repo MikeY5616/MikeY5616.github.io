@@ -14,7 +14,8 @@
   }
 
   // 按日期从新到旧排序
-  var posts = (window.POSTS || []).slice().sort(function (a, b) {
+  // 注意：posts.js 里用 const 定义 POSTS，不会挂到 window 上，要直接引用
+  var posts = (typeof POSTS !== "undefined" ? POSTS : []).slice().sort(function (a, b) {
     return b.date.localeCompare(a.date);
   });
 
