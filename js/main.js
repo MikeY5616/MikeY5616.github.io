@@ -1,5 +1,5 @@
 // ============================================
-// 首页文章列表渲染 —— 一般不需要修改
+// 首页文章列表渲染 + 搜索 —— 一般不需要修改
 // ============================================
 
 (function () {
@@ -19,30 +19,55 @@
     return b.date.localeCompare(a.date);
   });
 
-  if (posts.length === 0) {
-    list.innerHTML = '<p class="empty-tip">还没有文章，敬请期待～</p>';
-    return;
+  // 单篇文章卡片
+  function postCard(p) {
+    var url = "post.html?p=" + p.slug;
+    var tags = (p.tags || [])
+      .map(function (t) {
+        return '<a class="tag" href="tags.html?tag=' + encodeURIComponent(t) + '">' + t + "</a>";
+      })
+      .join("");
+    return (
+      '<article class="post-card">' +
+      '<time class="post-date" datetime="' + p.date + '">' + formatDate(p.date) + "</time>" +
+      '<h3 class="post-title"><a href="' + url + '">' + p.title + "</a></h3>" +
+      '<p class="post-excerpt">' + p.excerpt + "</p>" +
+      '<div class="post-meta">' +
+      tags +
+      '<a class="read-more" href="' + url + '">阅读全文 →</a>' +
+      "</div>" +
+      "</article>"
+    );
   }
 
-  list.innerHTML = posts
-    .map(function (p) {
-      var url = "post.html?p=" + p.slug;
-      var tags = (p.tags || [])
-        .map(function (t) {
-          return '<span class="tag">' + t + "</span>";
-        })
-        .join("");
-      return (
-        '<article class="post-card">' +
-        '<time class="post-date" datetime="' + p.date + '">' + formatDate(p.date) + "</time>" +
-        '<h3 class="post-title"><a href="' + url + '">' + p.title + "</a></h3>" +
-        '<p class="post-excerpt">' + p.excerpt + "</p>" +
-        '<div class="post-meta">' +
-        tags +
-        '<a class="read-more" href="' + url + '">阅读全文 →</a>' +
-        "</div>" +
-        "</article>"
-      );
-    })
-    .join("");
+  function render(listToShow) {
+    if (listToShow.length === 0) {
+      var searching = searchInput && searchInput.value.trim() !== "";
+      list.innerHTML = searching
+        ? '<p class="empty-tip">没有找到相关文章，换个关键词试试～</p>'
+        : '<p class="empty-tip">还没有文章，敬请期待～</p>';
+      return;
+    }
+    list.innerHTML = listToShow.map(postCard).join("");
+  }
+
+  // ---------- 搜索 ----------
+  var searchInput = document.getElementById("search-input");
+
+  render(posts);
+
+  if (searchInput) {
+    searchInput.addEventListener("input", function () {
+      var q = searchInput.value.trim().toLowerCase();
+      if (!q) {
+        render(posts);
+        return;
+      }
+      var filtered = posts.filter(function (p) {
+        var haystack = (p.title + " " + p.excerpt + " " + (p.tags || []).join(" ")).toLowerCase();
+        return haystack.indexOf(q) !== -1;
+      });
+      render(filtered);
+    });
+  }
 })();

@@ -203,6 +203,128 @@ a:hover {
   text-align: center;
 }
 
+/* ---------- 搜索框 ---------- */
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 11px 18px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-box input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.75;
+}
+
+.search-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.12);
+}
+
+/* ---------- 子页面（归档 / 标签） ---------- */
+.browse-page {
+  padding: 56px 0 64px;
+  flex: 1;
+}
+
+.browse-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.browse-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.tag-chip {
+  font: inherit;
+  font-size: 0.88rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  border-radius: 999px;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.tag-chip:hover {
+  border-color: var(--accent);
+}
+
+.tag-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.archive-year {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 32px 0 12px;
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.archive-year:first-child {
+  margin-top: 0;
+}
+
+.archive-posts {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 20px;
+}
+
+.archive-post {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.archive-post:last-child {
+  border-bottom: none;
+}
+
+.archive-post time {
+  flex-shrink: 0;
+  min-width: 76px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.archive-post a {
+  color: var(--text);
+}
+
+.archive-post a:hover {
+  color: var(--accent);
+}
+
 /* ---------- 文章详情页 ---------- */
 .post-page {
   padding: 56px 0 64px;
@@ -376,5 +498,18 @@ a:hover {
   }
   .post-body {
     font-size: 1rem;
+  }
+  .browse-page {
+    padding: 32px 0 48px;
+  }
+  .browse-title {
+    font-size: 1.55rem;
+  }
+  .archive-post {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .archive-post time {
+    min-width: 0;
   }
 }
