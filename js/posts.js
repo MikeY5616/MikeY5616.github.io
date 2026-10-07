@@ -11,6 +11,13 @@
 
 const POSTS = [
   {
+    slug: "bitwarden-story",
+    title: "Bitwarden：一个开源密码管理器的十年",
+    date: "2026-10-07",
+    excerpt: "把密码托付给开源：Bitwarden 的起源、安全设计，和一个程序员副业长成独立小巨头的十年。",
+    tags: ["工具", "随笔"]
+  },
+  {
     slug: "qingjian-input-method",
     title: "青简输入法",
     date: "2026-10-07",
