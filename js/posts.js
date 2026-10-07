@@ -11,6 +11,13 @@
 
 const POSTS = [
   {
+    slug: "qingjian-input-method",
+    title: "青简输入法",
+    date: "2026-10-07",
+    excerpt: "今天发现一个好玩的输入法：打字的同时顺便学外语，无痛积累词汇。",
+    tags: ["随笔", "工具"]
+  },
+  {
     slug: "markdown-usage",
     title: "markdown使用指南",
     date: "2026-10-06",
